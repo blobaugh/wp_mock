@@ -3,15 +3,10 @@
 	"description": "A mocking library to take the pain out of unit testing for WordPress",
 	"license"    : "GPL-2.0+",
 	"require"    : {
-		"php"                 : ">=5.3.2",
-		"mockery/mockery"     : "~0.8",
-		"antecedent/patchwork": "~1.2"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "~3.7"
-	},
-	"conflict": {
-		"phpunit/phpunit": ">=6.0"
+		"php"                 : ">=5.6",
+		"phpunit/phpunit"     : ">=5.7",
+		"mockery/mockery"     : "^0.9.9",
+		"antecedent/patchwork": "^2.0"
 	},
 	"autoload"   : {
 		"psr-0"   : {
@@ -23,5 +18,18 @@
 		"branch-alias": {
 			"dev-dev": "1.0.x-dev"
 		}
+	},
+	"config": {
+		"platform": {
+			"php": "5.6"
+		}
+	},
+	"scripts": {
+		"test:behat": "behat",
+		"test:phpunit": "phpunit",
+		"test"      : [
+			"@test:behat",
+			"@test:phpunit"
+		]
 	}
 }
